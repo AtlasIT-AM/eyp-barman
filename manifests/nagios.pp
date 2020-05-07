@@ -1,6 +1,7 @@
 class barman::nagios(
-                      $basedir        = '/usr/local/bin',
-                      $add_nrpe_sudos = true,
+                      $basedir              = '/usr/local/bin',
+                      $add_nrpe_sudos       = true,
+                      $install_snmpd_checks = true,
                     ) inherits barman::params {
   include ::barman
 
@@ -47,6 +48,22 @@ class barman::nagios(
     # compatibility
     nrpe::sudo { 'sudo NRPE check_barman_backups_failed':
       command => "${basedir}/check_barman_backups_failed",
+    }
+  }
+
+  if($install_snmpd_checks)
+  {
+    if(defined(Class['snmpd']))
+    {
+      snmpd::extend { 'barman_servers':
+        script      => "${puppet::agent::nagios_check_basedir}/report_barman_servers",
+        description => 'barman servers',
+      }
+
+      snmpd::extend { 'barman_backups':
+        script      => "${puppet::agent::nagios_check_basedir}/check_barman_backups",
+        description => 'barman backups',
+      }
     }
   }
 }

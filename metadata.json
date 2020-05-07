@@ -1,6 +1,6 @@
 {
   "name": "eyp-barman",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "author": "eyp",
   "summary": "manages barman: physical backup and PITR manager for postgres",
   "license": "Apache-2.0",

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# 0.2.17
+
+* added snmpd support
+
 # 0.2.16
 
 * bugfix barman server report
