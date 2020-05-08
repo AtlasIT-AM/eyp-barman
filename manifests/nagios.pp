@@ -56,12 +56,12 @@ class barman::nagios(
     if(defined(Class['snmpd']))
     {
       snmpd::extend { 'barman_servers':
-        script      => "${puppet::agent::nagios_check_basedir}/report_barman_servers",
+        script      => "/bin/bash ${puppet::agent::nagios_check_basedir}/report_barman_servers",
         description => 'barman servers',
       }
 
       snmpd::extend { 'barman_backups':
-        script      => "${puppet::agent::nagios_check_basedir}/check_barman_backups",
+        script      => "/bin/bash ${puppet::agent::nagios_check_basedir}/check_barman_backups",
         description => 'barman backups',
       }
     }
