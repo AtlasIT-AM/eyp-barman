@@ -1,6 +1,6 @@
 {
   "name": "eyp-barman",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "author": "eyp",
   "summary": "manages barman: physical backup and PITR manager for postgres",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
     {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"},
-    {"name":"eyp/postgresql","version_requirement":">= 0.3.3 < 0.5.0"},
+    {"name":"eyp/postgresql","version_requirement":">= 0.3.3 < 0.6.0"},
     {"name":"eyp/sudoers","version_requirement":">= 0.1.32 < 0.2.0"},
     {"name":"eyp/epel","version_requirement":">= 3.14.159 < 4.0.0"},
     {"name":"eyp/eyplib","version_requirement":">= 0.1.0 < 0.2.0"}

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# 0.2.19
+
+* added support for **eyp-postgres 0.5**
+
 # 0.2.18
 
 * added snmpd support
