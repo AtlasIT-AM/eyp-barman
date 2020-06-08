@@ -31,8 +31,8 @@ class barman::nagios(
 
   # compatibility
   file { "${basedir}/check_barman_backups_failed":
-    ensure  => 'link',
-    target   => "${basedir}/check_barman_backups",
+    ensure => 'link',
+    target => "${basedir}/check_barman_backups",
   }
 
   if($add_nrpe_sudos)
